@@ -6,7 +6,7 @@ const MoviesPage = () => {
     return (
         <div>
             <Header/>
-            <MoviesList/>
+            <MoviesList movies={[]}/>
         </div>
     );
 };

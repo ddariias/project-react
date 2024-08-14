@@ -1,40 +1,18 @@
-'use client'
-import React, {useEffect, useState} from 'react';
+import React, {FC} from 'react';
+import {IMovie} from "@/models/IMovie";
 
-import {movieService} from "@/services/api.service";
-
-interface IMovie{
-    id:number,
-    title: string
-}
-interface IInfo{
-    page: number,
-    results: IMovie[]
+type Props = {
+    movies: IMovie[]
 }
 
+const MoviesList:FC<Props> = ({movies}) => {
 
-const MoviesList = () => {
-    const [movies,setMovies] = useState<IMovie[]>([])
-
-    useEffect(() => {
-        const fetchMovies = async () => {
-            try {
-                const response:IInfo = await movieService.getMovies()
-                setMovies(response.results)
-            }catch (e){
-                return e
-            }
-
-        }
-        fetchMovies()
-    }, []);
-
-    console.log(movies);
+   const baseUrlImage = 'https://image.tmdb.org/t/p/w500'
 
     return (
         <div>
             {
-               movies && movies.map(movie => <div key={movie.id}>{movie.title}</div>)
+               movies && movies.map(movie => <div key={movie.id}><img src={`${baseUrlImage}${movie.backdrop_path}`}/>{movie.original_title}</div>)
             }
         </div>
     );
