@@ -1,0 +1,41 @@
+.header{
+    background-color: #25312f;
+    margin: 40px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: aliceblue;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.text{
+    font-family: "Sukhumvit Set";
+    color: antiquewhite;
+}
+.container_movie{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+.image{
+    padding: 40px;
+
+}
+.image img {
+    height: 200px;
+    width: 250px;
+}
+.image a {
+    text-decoration: none;
+    color: aliceblue;
+}
+.button{
+    background-color: #25312f;
+    color: aliceblue;
+}

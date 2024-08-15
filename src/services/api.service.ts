@@ -1,4 +1,5 @@
 import {IMovies} from "@/models/IMovies";
+import {IGenres} from "@/models/IGenres";
 
 const baseUrl = 'https://api.themoviedb.org/3'
 
@@ -6,11 +7,16 @@ const token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YzViMGZkOTc0MGU1OTEzOGVkMjYwNDUy
 
 
 export const movieService = {
-    getMovies: async ():Promise<IMovies> => {
+    getMovies: async (): Promise<IMovies> => {
         const response = await fetch(`${baseUrl}` + '/' + 'discover/movie',
-            {headers: {'Authorization': 'Bearer' + `${token}`}})
+            {headers: {'Authorization': 'Bearer ' + `${token}`}})
+            .then(value => value.json())
+        return response
+    },
+    getGenres: async (): Promise<IGenres> => {
+        const response = await fetch(`${baseUrl}` + '/' + 'genre/movie/list',
+            {headers: {'Authorization': 'Bearer ' + `${token}`}})
             .then(value => value.json())
         return response
     }
 }
-
