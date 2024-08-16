@@ -9,16 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@smastrom/react-rating": "^1.5.0",
+    "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.5"
+    "react-stars-ratings": "^2.0.0",
+    "star-power": "^1.0.2",
+    "stars": "^1.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@ernane/svelte-star-rating": "^1.1.9",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.5"
+    "eslint-config-next": "14.2.5",
+    "typescript": "^5"
   }
 }

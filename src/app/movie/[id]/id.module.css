@@ -1,0 +1,12 @@
+.info{
+    text-align: center;
+    color: beige;
+}
+.info img{
+    width: 600px;
+    height: 400px;
+}
+.overview{
+    margin: 30px 50px 30px 50px;
+
+}

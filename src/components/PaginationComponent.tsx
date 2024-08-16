@@ -1,8 +1,17 @@
 'use client'
 import React, {FC} from 'react';
 import {IMovies} from "@/models/IMovies";
+import {useSearchParams} from "next/navigation";
 
-const PaginationComponent:FC<IMovies> = ({page}) => {
+type Props ={
+    page: string | null
+}
+
+const PaginationComponent:FC<Props> = ({page}) => {
+
+    const searchParams=useSearchParams()
+
+
 
 
     return (

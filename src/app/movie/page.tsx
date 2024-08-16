@@ -4,18 +4,17 @@ import {IMovie} from "@/models/IMovie";
 import {IMovies} from "@/models/IMovies";
 import {movieService} from "@/services/api.service";
 import MoviesList from "@/components/MoviesList";
+import Header from "@/components/Header";
 
 
 const MoviesPage = () => {
 
     const [movies,setMovies] = useState<IMovie[]>([])
-    console.log(movies);
     useEffect(() => {
         const fetchMovies = async () => {
             try {
                 const response:IMovies = await movieService.getMovies()
                 setMovies(response.results)
-                console.log(response.results);
             }catch (e){
                 return e
             }
@@ -23,6 +22,7 @@ const MoviesPage = () => {
         }
         fetchMovies()
     }, []);
+
 
     return (
         <div>
