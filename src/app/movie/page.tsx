@@ -4,7 +4,8 @@ import {IMovie} from "@/models/IMovie";
 import {IMovies} from "@/models/IMovies";
 import {movieService} from "@/services/api.service";
 import MoviesList from "@/components/MoviesList";
-import Header from "@/components/Header";
+import PaginationPage from "@/app/page/page";
+
 
 
 const MoviesPage = () => {
@@ -24,9 +25,11 @@ const MoviesPage = () => {
     }, []);
 
 
+
     return (
         <div>
             <MoviesList movies={movies}/>
+            <PaginationPage/>
         </div>
     );
 };

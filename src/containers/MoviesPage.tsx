@@ -12,7 +12,6 @@ const MoviesPage = () => {
         <div>
             <Header/>
             <MoviesList movies={[]}/>
-            <Footer/>
         </div>
     );
 };
