@@ -1,27 +1,28 @@
 'use client'
 import React, {useEffect, useState} from 'react';
-import {IMovies} from "@/models/IMovies";
 import {movieService} from "@/services/api.service";
-import {usePathname} from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
+import {IMovie} from "@/models/IMovie";
+import MoviesList from "@/components/MoviesList";
+import styles from './pagination.module.css'
 
 const PaginationPage = () => {
-    const [movies, setMovies] = useState<IMovies[]>([])
+    const [movies, setMovies] = useState<IMovie[]>([])
     const [paginationPage, setPaginationPage] = useState(1);
-
-    const pathname:string = usePathname()
-    console.log(pathname)
+    const router = useRouter();
 
     useEffect(() => {
-        const fetchMovies = async (page:number) => {
+        const fetchMovies = async (paginationPage:number) => {
             try {
-                const fetch = await movieService.getPage(pathname, page)
-                setMovies(fetch)
+                const fetch = await movieService.getPage(paginationPage)
+                setMovies(fetch.results)
             }catch (e){
 
             }
         }
         fetchMovies(paginationPage)
-    }, [paginationPage]);
+        router.push(`/movie?page=${paginationPage}`);
+    }, [paginationPage, router]);
 
     const prevPage = () => {
         if(paginationPage > 1){
@@ -34,10 +35,12 @@ const PaginationPage = () => {
 
     return (
         <div>
+            <MoviesList movies={movies}/>
+            <div className={styles.pagination}>
             <button onClick={prevPage} disabled={paginationPage <= 1}>prev page</button>
             <p>{paginationPage}</p>
             <button onClick={nextPage}>next page</button>
-
+            </div>
         </div>
     );
 };

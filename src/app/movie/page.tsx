@@ -28,7 +28,6 @@ const MoviesPage = () => {
 
     return (
         <div>
-            <MoviesList movies={movies}/>
             <PaginationPage/>
         </div>
     );

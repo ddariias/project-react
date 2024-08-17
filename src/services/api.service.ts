@@ -13,8 +13,8 @@ export const movieService = {
             .then(value => value.json())
         return response
     },
-    getPage: async (pathname:string ,page: number): Promise<IMovies[]> => {
-        const response = await fetch(`${baseUrl}` + '/' + `discover/movie?page=${page}`,
+    getPage: async (paginationPage: number): Promise<IMovies> => {
+        const response = await fetch(`${baseUrl}` + '/' + `discover/movie?page=${paginationPage}`,
             {headers: {'Authorization': 'Bearer ' + `${token}`}})
             .then(value => value.json())
         return response
@@ -25,4 +25,5 @@ export const movieService = {
             .then(value => value.json())
         return response
     }
+
 }

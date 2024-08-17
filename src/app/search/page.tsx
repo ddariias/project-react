@@ -1,9 +1,9 @@
 'use client'
 import React, {useState} from 'react';
-import styles from './Components.module.css'
 import {IMovie} from "@/models/IMovie";
+import styles from './search.module.css'
 
-const SearchComponent = () => {
+const SearchPage = () => {
 
     const [movies,setMovies] = useState<IMovie[]>([])
     const [search,setSearch]= useState<IMovie[]>([])
@@ -16,11 +16,17 @@ const SearchComponent = () => {
 
 
     return (
+        <div>
         <form onSubmit={searchFunc}>
             <input type="text"/>
             <button className={styles.button}>submit</button>
         </form>
+
+            {/*{*/}
+            {/*    movies.map(movie => {movie.original_title})*/}
+            {/*}*/}
+        </div>
     );
 };
 
-export default SearchComponent;
+export default SearchPage;

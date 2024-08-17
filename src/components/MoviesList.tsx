@@ -1,10 +1,8 @@
 import React, {FC} from 'react';
 import {IMovie} from "@/models/IMovie";
 import styles from './Components.module.css'
-import PaginationComponent from "@/components/PaginationComponent";
 import Link from "next/link";
 import RatingComponent from "@/components/RatingComponent";
-import Footer from "@/components/Footer";
 
 type Props = {
     movies: IMovie[]

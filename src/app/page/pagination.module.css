@@ -1,0 +1,13 @@
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagination p{
+    margin: 20px;
+    color: aliceblue;
+}
+.pagination button{
+    background-color: #25312f;
+    color: aliceblue;
+}

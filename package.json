@@ -17,7 +17,10 @@
     "react-native-star-rating": "^1.1.0",
     "react-stars-ratings": "^2.0.0",
     "star-power": "^1.0.2",
-    "stars": "^1.0.0"
+    "stars": "^1.0.0",
+    "redux": "^5.0.1",
+    "react-redux": "^9.1.2",
+    "@reduxjs/toolkit": "^2.2.7"
   },
   "devDependencies": {
     "@ernane/svelte-star-rating": "^1.1.9",
