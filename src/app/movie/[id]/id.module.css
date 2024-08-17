@@ -6,7 +6,25 @@
     width: 600px;
     height: 400px;
 }
-.overview{
-    margin: 30px 50px 30px 50px;
+.info h1{
+    color: darkcyan;
+}
+.info h3{
+    color: darkcyan;
+}
+.overview {
+    margin: 30px 50px 30px 350px;
+    width: 50%;
 
+}
+.imgWithDetails{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rating{
+    margin: 90px;
+}
+.rating h3{
+    color: darkcyan;
 }

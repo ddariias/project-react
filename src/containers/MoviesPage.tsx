@@ -1,13 +1,18 @@
+'use client'
 import React from 'react';
 import Header from "@/components/Header";
 import MoviesList from "@/components/MoviesList";
-import styles from './Main.module.css'
+import Footer from "@/components/Footer";
+
 
 const MoviesPage = () => {
+
+
     return (
         <div>
             <Header/>
             <MoviesList movies={[]}/>
+            <Footer/>
         </div>
     );
 };

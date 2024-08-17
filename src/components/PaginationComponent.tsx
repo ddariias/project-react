@@ -1,23 +1,43 @@
 'use client'
-import React, {FC} from 'react';
+import React, {useEffect, useState} from 'react';
+import {movieService} from "@/services/api.service";
 import {IMovies} from "@/models/IMovies";
-import {useSearchParams} from "next/navigation";
-
-type Props ={
-    page: string | null
-}
-
-const PaginationComponent:FC<Props> = ({page}) => {
-
-    const searchParams=useSearchParams()
 
 
+
+const PaginationComponent = () => {
+
+    const [movies, setMovies] = useState<IMovies[]>([])
+    const [paginationPage, setPaginationPage] = useState(1)
+
+    useEffect(() => {
+        const fetchMovies = async (page:number) => {
+            try {
+                const fetch = await movieService.getPage(page)
+                setMovies(fetch)
+            }catch (e){
+
+            }
+console.log(paginationPage)
+        }
+        fetchMovies(paginationPage)
+    }, [paginationPage]);
+
+    const prevPage = () => {
+        if(paginationPage > 1){
+            setPaginationPage(value => value - 1)
+        }
+    }
+    const nextPage = () => {
+         setPaginationPage(value => value + 1)
+    }
 
 
     return (
         <div>
-            <button>prev page</button>
-            <button>next page</button>
+            <button onClick={prevPage}>prev page</button>
+            <p>{paginationPage}</p>
+            <button onClick={nextPage}>next page</button>
         </div>
     );
 };

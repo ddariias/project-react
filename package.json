@@ -11,8 +11,10 @@
   "dependencies": {
     "@smastrom/react-rating": "^1.5.0",
     "next": "14.2.5",
+    "ngx-stars-rating": "^1.1.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-native-star-rating": "^1.1.0",
     "react-stars-ratings": "^2.0.0",
     "star-power": "^1.0.2",
     "stars": "^1.0.0"

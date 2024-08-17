@@ -13,6 +13,12 @@ export const movieService = {
             .then(value => value.json())
         return response
     },
+    getPage: async (page: number): Promise<IMovies[]> => {
+        const response = await fetch(`${baseUrl}` + '/' + `discover/movie?page=${page}`,
+            {headers: {'Authorization': 'Bearer ' + `${token}`}})
+            .then(value => value.json())
+        return response
+    },
     getGenres: async (): Promise<IGenres> => {
         const response = await fetch(`${baseUrl}` + '/' + 'genre/movie/list',
             {headers: {'Authorization': 'Bearer ' + `${token}`}})
