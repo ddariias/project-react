@@ -24,5 +24,13 @@ export const movieService = {
             {headers: {'Authorization': 'Bearer ' + `${token}`}})
             .then(value => value.json())
         return response
-    }
+    },
+    getMoviesByGenre: async (genreId: number): Promise<IMovies> => {
+
+            const response = await fetch(`${baseUrl}/discover/movie?with_genres=${genreId}`, {
+                headers: { 'Authorization': `Bearer ${token}` }})
+                .then(value => value.json())
+                return response
+
+    },
 }

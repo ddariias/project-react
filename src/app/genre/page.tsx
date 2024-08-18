@@ -5,9 +5,9 @@ import {IGenre} from "@/models/IGenre";
 import {IGenres} from "@/models/IGenres";
 import Link from "next/link";
 import styles from './genre_style.module.css'
+import GenreIDPage from "@/app/genre/[id]/page";
 
 const GenrePage = () => {
-
     const [genres,setGenres] = useState<IGenre[]>([])
     useEffect(() => {
         const fetchGenre = async () => {
@@ -23,13 +23,16 @@ const GenrePage = () => {
     }, []);
 
     return (
-        <div>
+        <div className={styles.genreBox}>
+            <div>
             {
-                genres.map(genre => <div key={genre.id} className={styles.gender}><Link
-                    href={`/?genre=${genre.id}`}>{genre.name}</Link></div>)
+                genres.map(genre => <div key={genre.id} className={styles.genre}><Link
+                    href={`?with_genres=${genre.id}`}>{genre.name}</Link></div>)
             }
-
-
+        </div>
+            <div>
+        <GenreIDPage/>
+        </div>
         </div>
     );
 };

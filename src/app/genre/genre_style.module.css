@@ -1,4 +1,15 @@
-.gender a{
+.genre{
+    margin: 20px;
+
+}
+.genre a{
     color: antiquewhite;
     text-decoration: none;
+    background-color: #25312f;
+    border-radius: 7px;
+
+}
+.genreBox{
+    display: flex;
+    justify-content: space-around;
 }

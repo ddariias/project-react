@@ -11,7 +11,6 @@ const MovieWithIdPage = ({searchParams}: any) => {
             <h1>{movie.original_title}</h1>
             <div className={styles.imgWithDetails}><img src={`${baseUrlImage}${movie.backdrop_path}`} alt="Photo"/>
                 <div className={styles.rating}><h3>Rating</h3><RatingComponent vote_average={movie.vote_average}/>
-                    <h3>Genre</h3>{movie.genre_ids}
                     <h3>Release date</h3>{movie.release_date}
                 </div>
             </div>
