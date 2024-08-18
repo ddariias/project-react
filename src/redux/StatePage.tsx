@@ -1,11 +1,13 @@
 // 'use client'
-// import {useAppSelector} from "@/app/redux/store";
+//
+//
+// import {useAppSelector} from "@/redux/store";
 // import LightOrDarkComponent from "@/components/LightOrDarkComponent";
 //
 // export default function StatePage() {
 //
-//     const light = useAppSelector((state) => state.LightSlice.lightState)
-//     const dark = useAppSelector((state) => state.DarkSlice.darkState)
+//     const light = useAppSelector((state:any) => state.LightSlice.lightState)
+//     const dark = useAppSelector((state:any) => state.DarkSlice.darkState)
 //
 //     return (
 //         <main>

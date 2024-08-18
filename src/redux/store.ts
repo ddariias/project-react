@@ -1,8 +1,8 @@
 // 'use client'
 // import {configureStore} from "@reduxjs/toolkit";
-// import {LightSlice} from "@/app/redux/slices/LightSlice";
-// import {DarkSlice} from "@/app/redux/slices/DarkSlice";
 // import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
+// import {LightSlice} from "@/redux/slices/LightSlice";
+// import {DarkSlice} from "@/redux/slices/DarkSlice";
 //
 // export const store = configureStore({
 //     reducer:{

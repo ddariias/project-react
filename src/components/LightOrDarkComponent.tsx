@@ -1,14 +1,14 @@
 // 'use client'
 // import React from 'react';
-// import {useAppDispatch, useAppSelector} from "@/app/redux/store";
-// import {deleteLightState, lightChange} from "@/app/redux/slices/LightSlice";
-// import {darkChange, deleteDarkState} from "@/app/redux/slices/DarkSlice";
+// import {useAppDispatch, useAppSelector} from "@/redux/store";
+// import {deleteLightState, lightChange} from "@/redux/slices/LightSlice";
+// import {darkChange, deleteDarkState} from "@/redux/slices/DarkSlice";
 //
 //
 // const LightOrDarkComponent = () => {
 //     const dispatch = useAppDispatch()
-//    const light = useAppSelector((state) => state.LightSlice.lightState)
-//    const dark = useAppSelector((state) => state.DarkSlice.darkState)
+//    const light = useAppSelector((state:any) => state.LightSlice.lightState)
+//    const dark = useAppSelector((state:any) => state.DarkSlice.darkState)
 //
 //     const changeState = () => {
 //         if (!light){
