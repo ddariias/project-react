@@ -25,5 +25,4 @@ export const movieService = {
             .then(value => value.json())
         return response
     }
-
 }
