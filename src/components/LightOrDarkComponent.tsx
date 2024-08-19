@@ -23,7 +23,7 @@
 //     return (
 //         <div>
 //             <button onClick={changeState}>
-//                 {dark ? "Переключити на світлу тему" : "Переключити на темну тему"}
+//                 click
 //             </button>
 //         </div>
 //     );
