@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import MoviesPage from "@/containers/MoviesPage";
+import AddMovieForm from "@/components/AddMovieForm";
 
 const inter = Inter({ subsets: ["latin"] });
 

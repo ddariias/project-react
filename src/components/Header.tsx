@@ -9,6 +9,8 @@ const Header = () => {
             <h1 className={styles.text}><Link href={'/'}>Movies App</Link></h1>
             <div><Link href={'/movie'}>Movies</Link></div>
             <div><Link href={'/genre'}>Genre</Link></div>
+            <div><Link href={'/register'}>Register</Link></div>
+
             <div><SearchPage/></div>
 
         </div>
