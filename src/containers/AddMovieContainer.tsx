@@ -37,6 +37,16 @@ const AddMovieContainer = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
+        const isValidDate = (dateString:any) => {
+            const regex = /^\d{4}-\d{2}-\d{2}$/;
+            return regex.test(dateString);
+        };
+
+        if (!isValidDate(movie.release_date)) {
+            alert("Invalid date format. It must be YYYY-MM-DD.");
+            return;
+        }
+
         // Перетворюємо genre_ids з рядка у масив чисел
         const genreIdsArray = movie.genre_ids.split(",").map(Number);
 
@@ -45,18 +55,22 @@ const AddMovieContainer = () => {
             genre_ids: genreIdsArray,
         };
 
-        const response = await fetch("http://localhost:3100/movies", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(movieData),
-        });
+        try {
+            const response = await fetch("http://localhost:3100/movie", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(movieData),
+            });
 
-        if (response.ok) {
-            alert("Movie registered successfully!");
-        } else {
-            alert("Failed to register movie.");
+            if (!response.ok) {
+                const errorData = await response.json();
+                alert(`Error: ${errorData.message}`);
+            } else {
+                alert("Movie successfully registered!");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("An error occurred while sending the data.");
         }
     };
 
